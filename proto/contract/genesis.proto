@@ -1,0 +1,17 @@
+syntax = "proto3";
+package firmachain.firmachain.contract;
+
+// this line is used by starport scaffolding # genesis/proto/import
+import "contract/contract_file.proto";
+import "contract/contract_log.proto";
+
+option go_package = "github.com/firmachain/firmachain/x/contract/types";
+
+// GenesisState defines the contract module's genesis state.
+message GenesisState {
+    // this line is used by starport scaffolding # genesis/proto/state
+		repeated ContractFile contractFileList = 3; // this line is used by starport scaffolding # genesis/proto/stateField
+		repeated ContractLog contractLogList = 1; // this line is used by starport scaffolding # genesis/proto/stateField
+		uint64 contractLogCount = 2; // this line is used by starport scaffolding # genesis/proto/stateField
+    // this line is used by starport scaffolding # ibc/genesis/proto
+}
